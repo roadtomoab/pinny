@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv")
 const app = express();
 const pinRoute = require("./routes/pins")
+const userRoute = require("./routes/users")
 
 dotenv.config();
 
@@ -15,7 +16,8 @@ mongoose
     })
     .catch((err) => console.log(err));
 
-    app.use("/pins", pinRoute)
+    app.use("/pins", pinRoute);
+    app.use("/users", userRoute);
 
 // local port we're running on
 
