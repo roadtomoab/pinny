@@ -16,11 +16,14 @@ mongoose
     })
     .catch((err) => console.log(err));
 
+    const cors = require('cors')
+
+    app.use(cors())
     app.use("/pins", pinRoute);
     app.use("/users", userRoute);
 
 // local port we're running on
 
-app.listen(3000, () => {
+app.listen(4000, () => {
     console.log("backend is running sauce")
 })
